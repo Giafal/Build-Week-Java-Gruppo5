@@ -17,11 +17,13 @@ import com.epicode.DAO.UtenteDAO;
 import com.epicode.enumaration.Stato;
 import com.epicode.enumaration.Validita;
 import com.epicode.model.Abbonamento;
+import com.epicode.model.Autobus;
 import com.epicode.model.Biglietto;
 import com.epicode.model.DistributoreAutomatico;
 import com.epicode.model.PuntoDiEmissione;
 import com.epicode.model.RivenditoreAutorizzato;
 import com.epicode.model.Ticket;
+import com.epicode.model.Tram;
 import com.epicode.model.Utente;
 import com.epicode.utils.JpaUtil;
 
@@ -33,17 +35,17 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		DistributoreAutomatico da1 = new DistributoreAutomatico(Stato.ATTIVO, 5, 5);
-		RivenditoreAutorizzato ra1 = new RivenditoreAutorizzato(5, 5);
-////	
-		PuntoDiEmissione pde =PuntoDiEmissioneDAO.getPuntoDiEmissioneById(1l);
-		PuntoDiEmissione pde1 =PuntoDiEmissioneDAO.getPuntoDiEmissioneById(2l);
-		Utente u = UtenteDAO.getUtenteById(1l);
-////		
-////		
-		Biglietto b1 = new Biglietto(LocalDate.of(2023, 7, 17), pde, true);
-		Utente u1 = new Utente("Gianluca", "Falcone", 36, LocalDate.of(2023, 7, 17));
-		Abbonamento a1 = new Abbonamento(LocalDate.of(2023, 7, 17), pde1, Validita.MENSILE, u);
+//		DistributoreAutomatico da1 = new DistributoreAutomatico(Stato.ATTIVO, 5, 5);
+//		RivenditoreAutorizzato ra1 = new RivenditoreAutorizzato(5, 5);
+//////	
+//		PuntoDiEmissione pde =PuntoDiEmissioneDAO.getPuntoDiEmissioneById(1l);
+//		PuntoDiEmissione pde1 =PuntoDiEmissioneDAO.getPuntoDiEmissioneById(2l);
+//		Utente u = UtenteDAO.getUtenteById(1l);
+//////		
+//////		
+//		Biglietto b1 = new Biglietto(LocalDate.of(2023, 7, 17), pde, true);
+//		Utente u1 = new Utente("Gianluca", "Falcone", 36, LocalDate.of(2023, 7, 17));
+//		Abbonamento a1 = new Abbonamento(LocalDate.of(2023, 7, 17), pde1, Validita.MENSILE, u);
 		
 		//PuntoDiEmissioneDAO.salvaPuntoEmissione(ra1);
 		//BigliettoDAO.salvaBiglietto(b1);
@@ -52,7 +54,7 @@ public class Main {
 		//BigliettoDAO.eliminaBiglietto(b);
 		//UtenteDAO.salvaUtente(u1);
 		//AbbonamentoDAO.salvaAbbonamento(a1);
-		Abbonamento a = AbbonamentoDAO.getAbbonamentoById(2l);
+		//Abbonamento a = AbbonamentoDAO.getAbbonamentoById(2l);
 //		AbbonamentoDAO.eliminaAbbonamento(a);
 		
 //		List<Ticket> listaBiglietti = ricercaBiglietti(LocalDate.of(2023, 5, 5), LocalDate.of(2023, 8, 8));
@@ -61,7 +63,10 @@ public class Main {
 //		List<Ticket> listaBiglietti2 = ricercaPerPuntoEmissione(pde1);
 //		listaBiglietti2.forEach(e -> System.out.println(e));
 		
-		verificaValiditaMensile(a, 1l);
+		//verificaValiditaMensile(a, 1l);
+		
+		Tram t1 = new Tram(null, 100);
+		Autobus au1 = new Autobus(null, 50);
 	}
 	
 	//Test ricerca ticket totali in un dato periodo
