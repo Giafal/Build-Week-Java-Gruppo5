@@ -5,6 +5,7 @@ import java.time.LocalDate;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToOne;
 
 import com.epicode.enumaration.Validita;
@@ -17,22 +18,23 @@ public class Abbonamento extends Ticket {
 	private Validita validita;
 	@OneToOne
 	private Utente titolare;
-	@OneToOne
-	private PuntoDiEmissione luogoEmissione;
+	
+	
 	
 	
 	public Abbonamento() {
 		super();
 	}
-	
-	
-	public Abbonamento(LocalDate dataDiEmissione, Validita validita, Utente titolare, PuntoDiEmissione luogoEmissione) {
-		super(dataDiEmissione);
+
+
+
+	public Abbonamento(LocalDate dataDiEmissione, PuntoDiEmissione luogoEmissione, Validita validita, Utente titolare) {
+		super(dataDiEmissione, luogoEmissione);
 		this.validita = validita;
 		this.titolare = titolare;
-		this.luogoEmissione = luogoEmissione;
 		
 	}
+
 
 
 	public Validita getValidita() {
@@ -40,9 +42,11 @@ public class Abbonamento extends Ticket {
 	}
 
 
+
 	public void setValidita(Validita validita) {
 		this.validita = validita;
 	}
+
 
 
 	public Utente getTitolare() {
@@ -50,26 +54,24 @@ public class Abbonamento extends Ticket {
 	}
 
 
+
 	public void setTitolare(Utente titolare) {
 		this.titolare = titolare;
 	}
 
 
-	public PuntoDiEmissione getLuogoEmissione() {
-		return luogoEmissione;
-	}
-
-
-	public void setLuogoEmissione(PuntoDiEmissione luogoEmissione) {
-		this.luogoEmissione = luogoEmissione;
-	}
-
 
 	@Override
 	public String toString() {
-		return "Abbonamento [validita=" + validita + ", titolare=" + titolare + ", luogoEmissione=" + luogoEmissione
+		return "Abbonamento [validita=" + validita + ", titolare=" + titolare + ", getId()=" + getId()
+				+ ", getDataDiEmissione()=" + getDataDiEmissione() + ", getLuogoEmissione()=" + getLuogoEmissione()
 				+ "]";
 	}
+
+
+
+	
+	
 	
 	
 	

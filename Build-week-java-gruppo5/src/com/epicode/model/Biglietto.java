@@ -11,35 +11,39 @@ public class Biglietto extends Ticket {
 	
 	
 	private boolean vidimato;
-	@OneToOne
-	private PuntoDiEmissione luogoEmissione;
+	
 	
 	public Biglietto() {
 		super();
 	}
-	
-	public Biglietto(LocalDate dataDiEmissione, boolean vidimato, PuntoDiEmissione luogoEmissione) {
-		super(dataDiEmissione);
+
+
+	public Biglietto(LocalDate dataDiEmissione, PuntoDiEmissione luogoEmissione, boolean vidimato) {
+		super(dataDiEmissione, luogoEmissione);
 		this.vidimato = vidimato;
-		this.luogoEmissione = luogoEmissione;
+		
 	}
+
+
 	public boolean isVidimato() {
 		return vidimato;
 	}
+
+
 	public void setVidimato(boolean vidimato) {
 		this.vidimato = vidimato;
 	}
-	public PuntoDiEmissione getLuogoEmissione() {
-		return luogoEmissione;
-	}
-	public void setLuogoEmissione(PuntoDiEmissione luogoEmissione) {
-		this.luogoEmissione = luogoEmissione;
-	}
+
 
 	@Override
 	public String toString() {
-		return "Biglietto [vidimato=" + vidimato + ", luogoEmissione=" + luogoEmissione + "]";
+		return "Biglietto [vidimato=" + vidimato + ", getId()=" + getId() + ", getDataDiEmissione()="
+				+ getDataDiEmissione() + ", getLuogoEmissione()=" + getLuogoEmissione() + "]";
 	}
+
+
+	
+	
 	
 	
 	

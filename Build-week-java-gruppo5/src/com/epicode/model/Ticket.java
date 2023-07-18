@@ -10,12 +10,13 @@ import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToOne;
 
 
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @NamedQuery(name = "ticketTotali", query = "SELECT t FROM Ticket t  WHERE t.dataDiEmissione > :startDate AND t.dataDiEmissione < :endDate")
-@NamedQuery(name = "ticketPerPuntoEmissione", query = "SELECT t FROM Ticket t WHERE t.puntoDiEmissione = :pDE")
+@NamedQuery(name = "ticketPerPuntoEmissione", query = "SELECT t FROM Ticket t WHERE t.luogoEmissione = :pDE")
 
 public class Ticket {
 	
@@ -23,17 +24,21 @@ public class Ticket {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private LocalDate dataDiEmissione;
+	@OneToOne
+	private PuntoDiEmissione luogoEmissione;
 	
 	
 
 	public Ticket() {
 		super();
 	}
-	
 
-	public Ticket(LocalDate dataDiEmissione) {
+
+
+	public Ticket(LocalDate dataDiEmissione, PuntoDiEmissione luogoEmissione) {
 		super();
 		this.dataDiEmissione = dataDiEmissione;
+		this.luogoEmissione = luogoEmissione;
 	}
 
 
@@ -42,9 +47,12 @@ public class Ticket {
 		return id;
 	}
 
+
+
 	public void setId(Long id) {
 		this.id = id;
 	}
+
 
 
 	public LocalDate getDataDiEmissione() {
@@ -52,9 +60,24 @@ public class Ticket {
 	}
 
 
+
 	public void setDataDiEmissione(LocalDate dataDiEmissione) {
 		this.dataDiEmissione = dataDiEmissione;
 	}
+
+
+
+	public PuntoDiEmissione getLuogoEmissione() {
+		return luogoEmissione;
+	}
+
+
+
+	public void setLuogoEmissione(PuntoDiEmissione luogoEmissione) {
+		this.luogoEmissione = luogoEmissione;
+	}
+	
+
 	
 	
 
