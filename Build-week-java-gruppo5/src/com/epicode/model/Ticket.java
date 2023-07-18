@@ -15,6 +15,8 @@ import javax.persistence.NamedQuery;
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @NamedQuery(name = "ticketTotali", query = "SELECT t FROM Ticket t  WHERE t.dataDiEmissione > :startDate AND t.dataDiEmissione < :endDate")
+@NamedQuery(name = "ticketPerPuntoEmissione", query = "SELECT t FROM Ticket t WHERE t.puntoDiEmissione = :pDE")
+
 public class Ticket {
 	
 	@Id

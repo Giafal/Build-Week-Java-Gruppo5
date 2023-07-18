@@ -54,9 +54,11 @@ public class Main {
 //		List<Ticket> listaBiglietti = ricercaBiglietti(LocalDate.of(2023, 5, 5), LocalDate.of(2023, 8, 8));
 //		listaBiglietti.forEach(e -> System.out.println(e));
 		
-
+		List<Ticket> listaBiglietti2 = ricercaPerPuntoEmissione("rivenditoreAutorizzato");
+		listaBiglietti2.forEach(e -> System.out.println(e));
 	}
 	
+	//Test ricerca ticket totali in un dato periodo
 	public static List<Ticket> ricercaBiglietti(LocalDate s, LocalDate e) {
 		Query q = em.createNamedQuery("ticketTotali");
 		q.setParameter("startDate", s);
@@ -64,5 +66,14 @@ public class Main {
 		return q.getResultList();
 		
 	}
+	
+	//test ricerca ticket totali per punto di emissione
+	public static List<Ticket> ricercaPerPuntoEmissione(String pDE){
+		Query q = em.createNamedQuery("ticketPerPuntoEmissione");
+		q.setParameter("pDE", pDE);
+		return q.getResultList();
+	}
 
+	//Test verifica validità dell'abbonamento tramite numero tessera dell'utente
+	
 }
