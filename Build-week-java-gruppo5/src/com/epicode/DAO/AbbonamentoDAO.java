@@ -12,7 +12,7 @@ import com.epicode.model.Utente;
 public class AbbonamentoDAO {
 	
 	static EntityManager em = Persistence.createEntityManagerFactory("Build-week-java-gruppo5").createEntityManager();
-	static Logger log = LoggerFactory.getLogger(BigliettoDAO.class);
+	static Logger log = LoggerFactory.getLogger(AbbonamentoDAO.class);
 	
 	
 	public static void salvaAbbonamento(Abbonamento a) {

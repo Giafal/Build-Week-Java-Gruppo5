@@ -12,7 +12,7 @@ import com.epicode.model.Autobus;
 public class AutobusDAO {
 	
 	static EntityManager em = Persistence.createEntityManagerFactory("Build-week-java-gruppo5").createEntityManager();
-	static Logger log = LoggerFactory.getLogger(BigliettoDAO.class);
+	static Logger log = LoggerFactory.getLogger(AutobusDAO.class);
 	
 	
 	public static void salvaAutobus(Autobus a) {
@@ -44,7 +44,7 @@ public class AutobusDAO {
 		}
 	}
 	
-	public static Autobus getTramById(Long id) {
+	public static Autobus getAutobusById(Long id) {
 		try {
 		em.getTransaction().begin();
 		Autobus t = em.find(Autobus.class, id);
@@ -56,7 +56,7 @@ public class AutobusDAO {
 		} return null;
 	}
 	
-	public static void modificaTram(Autobus a) {
+	public static void modificaAutobus(Autobus a) {
 		try  {
 		em.getTransaction().begin();
 		em.merge(a);

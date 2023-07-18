@@ -11,7 +11,7 @@ import com.epicode.model.Tram;
 public class TramDAO {
 	
 	static EntityManager em = Persistence.createEntityManagerFactory("Build-week-java-gruppo5").createEntityManager();
-	static Logger log = LoggerFactory.getLogger(BigliettoDAO.class);
+	static Logger log = LoggerFactory.getLogger(TramDAO.class);
 	
 	
 	public static void salvaTram(Tram t) {

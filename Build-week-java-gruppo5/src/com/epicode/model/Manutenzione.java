@@ -24,7 +24,6 @@ public class Manutenzione {
 	
 	public Manutenzione() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 
