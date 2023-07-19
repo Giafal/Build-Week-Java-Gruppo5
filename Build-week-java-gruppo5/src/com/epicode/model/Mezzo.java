@@ -18,7 +18,6 @@ import javax.persistence.Table;
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @Table(name = "mezzo")
 
-
 public class Mezzo {
 	
 	@Id
@@ -27,6 +26,9 @@ public class Mezzo {
 	@OneToMany(cascade = CascadeType.ALL )
 	@Column
 	private List<Manutenzione> periodiManutenzione;
+	@OneToMany(cascade = CascadeType.ALL )
+	@Column
+	private List<Tratta> tratte;
 	
 	public Mezzo() {
 		super();
@@ -53,10 +55,20 @@ public class Mezzo {
 		this.periodiManutenzione = periodiManutenzione;
 	}
 
+	public List<Tratta> getTratte() {
+		return tratte;
+	}
+
+	public void setTratte(List<Tratta> tratte) {
+		this.tratte = tratte;
+	}
+
 	@Override
 	public String toString() {
-		return "Mezzo [id=" + id + ", periodiManutenzione=" + periodiManutenzione + "]";
+		return "Mezzo [id=" + id + ", periodiManutenzione=" + periodiManutenzione + ", tratte=" + tratte + "]";
 	}
+
+	
 
 	
 	

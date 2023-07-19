@@ -17,6 +17,7 @@ import com.epicode.DAO.BigliettoDAO;
 import com.epicode.DAO.ManutenzioneDAO;
 import com.epicode.DAO.PuntoDiEmissioneDAO;
 import com.epicode.DAO.TramDAO;
+import com.epicode.DAO.TrattaDAO;
 import com.epicode.DAO.UtenteDAO;
 import com.epicode.enumaration.Stato;
 import com.epicode.enumaration.Validita;
@@ -30,6 +31,7 @@ import com.epicode.model.PuntoDiEmissione;
 import com.epicode.model.RivenditoreAutorizzato;
 import com.epicode.model.Ticket;
 import com.epicode.model.Tram;
+import com.epicode.model.Tratta;
 import com.epicode.model.Utente;
 import com.epicode.utils.JpaUtil;
 
@@ -130,8 +132,26 @@ public class Main {
 //		bigliettiVidimati.forEach(bi -> log.info(bi.toString()));
 		
 		// RICERCA BIGLIETTI VIDIMATI PER DATA
-		List<Biglietto> bigliettiVidimatiData = cercaVidimatiPerData(LocalDate.of(2023, 7, 1), LocalDate.of(2023, 7, 30));
-		bigliettiVidimatiData.forEach(bi -> log.info(bi.toString()));
+//		List<Biglietto> bigliettiVidimatiData = cercaVidimatiPerData(LocalDate.of(2023, 7, 1), LocalDate.of(2023, 7, 30));
+//		bigliettiVidimatiData.forEach(bi -> log.info(bi.toString()));
+		
+		// SALVATAGGIO TRATTES
+//		Tratta tr1 = new Tratta("Cimitero", "Stazione", 20, 22, Cax);
+//		Tratta tr2 = new Tratta("Comune", "Supermercato", 12, 10, Vel);
+//		Tratta tr3 = new Tratta("Piazza", "Aeroporto", 33, 36, Cax);
+		
+		//TrattaDAO.salvaTratta(tr1);
+		
+//		Tratta tratta = TrattaDAO.getTrattaById(7l);
+//		TrattaDAO.eliminaTratta(tratta);
+		
+		
+//		List<Tratta> tratteTrovate = getTratte(2l);
+//		tratteTrovate.forEach(tratte -> log.info(tratte.toString()));
+//		log.info("numero di tratte trovate per il mezzo selezionato: " + tratteTrovate.size());
+		
+		List<Tratta> tempiTratte = getTempoTratte();
+		tempiTratte.forEach(tr -> log.info("Tempo effettivo della tratta " + tr.getId() + ": " + tr.getTempoEffettivo() + " minuti"));
 	}
 	
 
@@ -189,6 +209,19 @@ public class Main {
 		Query q = em.createNamedQuery("ticketVidimatiPerData");
 		q.setParameter("startDate", start);
 		q.setParameter("endDate", end);
+		return q.getResultList();
+	}
+	
+	//TROVA TRATTE PER ID MEZZO
+	public static List<Tratta> getTratte(Long id) {
+		Query q = em.createNamedQuery("trovaTratte");
+		q.setParameter("id", id);
+		return q.getResultList();
+	}
+	
+	//TROVA TEMPO EFFETTIVO DELLE TRATTE
+	public static List<Tratta> getTempoTratte(){
+		Query q = em.createNamedQuery("travaTempoEffettivo");
 		return q.getResultList();
 	}
 	
