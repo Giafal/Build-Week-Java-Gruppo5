@@ -6,6 +6,7 @@ import javax.persistence.Persistence;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.epicode.model.Autobus;
 import com.epicode.model.Biglietto;
 
 public class BigliettoDAO {
@@ -53,6 +54,20 @@ public class BigliettoDAO {
 			em.getTransaction().rollback();
 			log.error("Qualcosa è andato storto: " + e.getMessage());
 		} return null;
+	}
+	
+	public static void modificaBiglietto(Biglietto b) {
+		try  {
+		em.getTransaction().begin();
+		em.merge(b);
+		em.getTransaction().commit();
+		log.info("Biglietto modificato.");
+		} catch (Exception e) {
+			em.getTransaction().rollback();
+			log.error("Qualcosa è andato storto: " + e.getMessage());
+		} finally {
+			em.close();
+		}
 	}
 
 }
