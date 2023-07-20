@@ -150,8 +150,8 @@ public class Main {
 //		tratteTrovate.forEach(tratte -> log.info(tratte.toString()));
 //		log.info("numero di tratte trovate per il mezzo selezionato: " + tratteTrovate.size());
 		
-		List<Tratta> tempiTratte = getTempoTratte();
-		tempiTratte.forEach(tr -> log.info("Tempo effettivo della tratta " + tr.getId() + ": " + tr.getTempoEffettivo() + " minuti"));
+//		List<Tratta> tempiTratte = getTempoTratte();
+//		tempiTratte.forEach(tr -> log.info("Tempo effettivo della tratta " + tr.getId() + ": " + tr.getTempoEffettivo() + " minuti"));
 	}
 	
 
@@ -224,5 +224,9 @@ public class Main {
 		Query q = em.createNamedQuery("travaTempoEffettivo");
 		return q.getResultList();
 	}
+	
+	public static void vidimaBiglietto(Biglietto b) {
+		b.setVidimato(true);
+	} 
 	
 }
