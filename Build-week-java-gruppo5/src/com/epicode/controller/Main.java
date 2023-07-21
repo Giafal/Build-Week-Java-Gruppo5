@@ -43,27 +43,28 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-//		DistributoreAutomatico da1 = new DistributoreAutomatico(Stato.ATTIVO, 5, 5);
-//		RivenditoreAutorizzato ra1 = new RivenditoreAutorizzato(5, 5);
-//	
-//		PuntoDiEmissione pde =PuntoDiEmissioneDAO.getPuntoDiEmissioneById(1l);
-//		PuntoDiEmissione pde1 =PuntoDiEmissioneDAO.getPuntoDiEmissioneById(2l);
-//		Utente u = UtenteDAO.getUtenteById(1l);
-//
-//		
-//		Biglietto b1 = new Biglietto(LocalDate.of(2023, 7, 17), pde, true);
-//		Utente u1 = new Utente("Gianluca", "Falcone", 36, LocalDate.of(2023, 7, 17));
-//		Abbonamento a1 = new Abbonamento(LocalDate.of(2023, 7, 17), pde1, Validita.MENSILE, u);
+	//punto 1 della traccia 
+		//DistributoreAutomatico da1 = new DistributoreAutomatico(Stato.ATTIVO, 5, 5);
+		//RivenditoreAutorizzato ra1 = new RivenditoreAutorizzato(5, 5);
+			//PuntoDiEmissioneDAO.salvaPuntoEmissione(ra1);
+			//PuntoDiEmissione pde =PuntoDiEmissioneDAO.getPuntoDiEmissioneById(1l);
+			//PuntoDiEmissione pde1 =PuntoDiEmissioneDAO.getPuntoDiEmissioneById(2l);
 		
-		//PuntoDiEmissioneDAO.salvaPuntoEmissione(da1);
-		//BigliettoDAO.salvaBiglietto(b1);
-		//Biglietto b = BigliettoDAO.getBigliettoById(1l);
-		//System.out.println(b);
-		//BigliettoDAO.eliminaBiglietto(b);
-		//UtenteDAO.salvaUtente(u1);
-		//AbbonamentoDAO.salvaAbbonamento(a1);
-		//Abbonamento a = AbbonamentoDAO.getAbbonamentoById(2l);
-//		AbbonamentoDAO.eliminaAbbonamento(a);
+		//Biglietto b1 = new Biglietto(LocalDate.of(2023, 7, 17), pde, true);
+			//BigliettoDAO.salvaBiglietto(b1);
+			//Biglietto b = BigliettoDAO.getBigliettoById(1l);
+			//System.out.println(b);
+			//BigliettoDAO.eliminaBiglietto(b);
+		
+		//Utente u1 = new Utente("Gianluca", "Falcone", 36, LocalDate.of(2023, 7, 17));
+			//UtenteDAO.salvaUtente(u1);
+			//Utente u = UtenteDAO.getUtenteById(1l);
+		
+		//Abbonamento a1 = new Abbonamento(LocalDate.of(2023, 7, 17), pde1, Validita.MENSILE, u);
+			//AbbonamentoDAO.salvaAbbonamento(a1);
+			//Abbonamento a = AbbonamentoDAO.getAbbonamentoById(2l);
+			//AbbonamentoDAO.eliminaAbbonamento(a);
+		
 		
 //		List<Ticket> listaBiglietti = ricercaBiglietti(LocalDate.of(2023, 5, 5), LocalDate.of(2023, 8, 8));
 //		listaBiglietti.forEach(e -> System.out.println(e));
@@ -72,7 +73,7 @@ public class Main {
 //		listaBiglietti2.forEach(e -> System.out.println(e));
 		
 		//verificaValiditaMensile(a, 1l);
-		
+	//punto 2 della traccia	
 		//crea mezzi
 		Tram t1 = new Tram(null, 100);
 		Autobus au1 = new Autobus(null, 50);
@@ -83,10 +84,10 @@ public class Main {
 //		AutobusDAO.salvaAutobus(au1);
 		
 	//Get Mezzi by id
-//		Autobus Cax = AutobusDAO.getAutobusById(2l);
-//		Tram Vel = TramDAO.getTramById(1l);
+		//Autobus Cax = AutobusDAO.getAutobusById(2l);
+		//Tram Vel = TramDAO.getTramById(1l);
 		
-// AGGIUNGO LA VISIMAZIONE DEL BIGLIETTO SU MEZZO VEL
+// AGGIUNGO LA VIDIMAZIONE DEL BIGLIETTO SU MEZZO VEL
 		
 	//	b.setMezzo(Vel);
 	//	b.setDataVidimazione(LocalDate.of(2023, 7, 19));
@@ -104,12 +105,12 @@ public class Main {
 		
 		
 	//verifica manutenzione
-//		au1.setPeriodiManutenzione(lista1);
-//		t2.setPeriodiManutenzione(lista2);
+		//au1.setPeriodiManutenzione(lista1);
+		//t2.setPeriodiManutenzione(lista2);
 		//Vel.setPeriodiManutenzione(lista2);
 		
-//		ManutenzioneDAO.salvaManutenzione(m1);
-//		ManutenzioneDAO.salvaManutenzione(m2);
+		//ManutenzioneDAO.salvaManutenzione(m1);
+		//ManutenzioneDAO.salvaManutenzione(m2);
 		
 		
 	//modifica mezzo
@@ -118,32 +119,29 @@ public class Main {
 		
 	//lancio metodo verificaStatusMezzo
 		
-//		List<Manutenzione> manutenzione1 = verificaStatusMezzo();
-//		manutenzione1.forEach(m -> log.info(m.toString()));
-		//log.info(manutenzione1 + "");
-//		for(Manutenzione m : manutenzione1) {
-//			log.info(m.toString() + "CIAOOOOO");//problema stampare @override toString da errore!!
-//		}
-//		System.out.println(manutenzione1);
+		//List<Manutenzione> manutenzione1 = verificaStatusMezzo();
+		//manutenzione1.forEach(m -> log.info(m.toString()));
 		
-		// RICERCA BIGLIETTI VIDIMATI PER NUMERO DEL MEZZO
+		
+	// RICERCA BIGLIETTI VIDIMATI PER NUMERO DEL MEZZO
 		 
-//		List<Biglietto> bigliettiVidimati = cercaVidimatiPerMezzo(1l);
-//		bigliettiVidimati.forEach(bi -> log.info(bi.toString()));
+		//List<Biglietto> bigliettiVidimati = cercaVidimatiPerMezzo(1l);
+		//bigliettiVidimati.forEach(bi -> log.info(bi.toString()));
 		
-		// RICERCA BIGLIETTI VIDIMATI PER DATA
-//		List<Biglietto> bigliettiVidimatiData = cercaVidimatiPerData(LocalDate.of(2023, 7, 1), LocalDate.of(2023, 7, 30));
-//		bigliettiVidimatiData.forEach(bi -> log.info(bi.toString()));
+	// RICERCA BIGLIETTI VIDIMATI PER DATA
 		
-		// SALVATAGGIO TRATTES
-//		Tratta tr1 = new Tratta("Cimitero", "Stazione", 20, 22, Cax);
-//		Tratta tr2 = new Tratta("Comune", "Supermercato", 12, 10, Vel);
-//		Tratta tr3 = new Tratta("Piazza", "Aeroporto", 33, 36, Cax);
+		//List<Biglietto> bigliettiVidimatiData = cercaVidimatiPerData(LocalDate.of(2023, 7, 1), LocalDate.of(2023, 7, 30));
+		//bigliettiVidimatiData.forEach(bi -> log.info(bi.toString()));
 		
-		//TrattaDAO.salvaTratta(tr1);
+	// SALVATAGGIO TRATTES
+		//Tratta tr1 = new Tratta("Cimitero", "Stazione", 20, 22, Cax);
+		//Tratta tr2 = new Tratta("Comune", "Supermercato", 12, 10, Vel);
+		//Tratta tr3 = new Tratta("Piazza", "Aeroporto", 33, 36, Cax);
 		
-//		Tratta tratta = TrattaDAO.getTrattaById(7l);
-//		TrattaDAO.eliminaTratta(tratta);
+		//TrattaDAO.salvaTratta(tr3);
+		
+		//Tratta tratta = TrattaDAO.getTrattaById(7l);
+		//TrattaDAO.eliminaTratta(tratta);
 		
 		
 //		List<Tratta> tratteTrovate = getTratte(2l);
@@ -221,7 +219,7 @@ public class Main {
 	
 	//TROVA TEMPO EFFETTIVO DELLE TRATTE
 	public static List<Tratta> getTempoTratte(){
-		Query q = em.createNamedQuery("travaTempoEffettivo");
+		Query q = em.createNamedQuery("trovaTempoEffettivo");
 		return q.getResultList();
 	}
 	

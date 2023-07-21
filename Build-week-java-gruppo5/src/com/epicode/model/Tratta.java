@@ -9,7 +9,7 @@ import javax.persistence.NamedQuery;
 
 @Entity
 @NamedQuery(name = "trovaTratte", query = "SELECT tr FROM Tratta tr WHERE tr.mezzo.id = :id")
-@NamedQuery(name = "travaTempoEffettivo", query = "SELECT tr FROM Tratta tr")
+@NamedQuery(name = "trovaTempoEffettivo", query = "SELECT tr FROM Tratta tr")
 public class Tratta {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
